@@ -1,6 +1,6 @@
 <template>
   <d2-container class="page">
-    <d2-page-cover>
+    <!-- <d2-page-cover>
       <d2-icon-svg class="logo" name="d2-admin"/>
       <template slot="footer">
         <div class="btn-group">
@@ -23,7 +23,7 @@
         <d2-badge/>
         <d2-help/>
       </template>
-    </d2-page-cover>
+    </d2-page-cover> -->
   </d2-container>
 </template>
 
