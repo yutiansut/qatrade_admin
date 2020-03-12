@@ -6,6 +6,7 @@ import charts from './modules/charts'
 import components from './modules/components'
 import element from './modules/element'
 import business from './modules/business'
+import trade from './modules/trade'
 
 import layoutHeaderAside from '@/layout/header-aside'
 
@@ -64,7 +65,8 @@ const frameIn = [
   charts,
   components,
   element,
-  business
+  business,
+  trade
 ]
 
 /**
