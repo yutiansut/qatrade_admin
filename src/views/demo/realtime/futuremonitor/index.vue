@@ -194,7 +194,7 @@ export default {
       }
     },
     initcodes () {
-      //http://www.yutiansut.com:8010/codelist
+
       axios.get(this.url + '/codelist')
         .then(response => {
           let r = response.data['result']
@@ -218,7 +218,7 @@ export default {
         intervalTime: 1000,
         debug: false,
         showTrade: false,
-        reverseColor: true
+        reverseColor: false
       })
       this.kline.draw()
       this.handleResize()
