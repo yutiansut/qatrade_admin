@@ -39,5 +39,5 @@ export default {
   //       { path: `${pre}issues/142`, title: '#142' }
   //     ]
   //   }
-  ])('/demo/trade/')
+  ])('/demo/backtest/')
 }

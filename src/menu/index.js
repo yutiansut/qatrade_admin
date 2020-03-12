@@ -19,6 +19,8 @@ import demotrade from './modules/demo-trade'
 
 import demobacktest  from './modules/demo-backtest'
 
+import  demorealtime from './modules/demo-realtime'
+
 // 菜单 侧边栏
 export const menuAside = [
   demoComponents,
@@ -30,7 +32,8 @@ export const menuAside = [
   demoD2Crud,
   demoFrame,
   demotrade,
-  demobacktest
+  demobacktest,
+  demorealtime
 ]
 
 // 菜单 顶栏
@@ -67,5 +70,6 @@ export const menuHeader = [
   // demoPlayground,
   // demoBusiness,
   demotrade,
-  demobacktest
+  demobacktest,
+  demorealtime
 ]
