@@ -19,18 +19,16 @@
               :columns="columns"
               :data="data"
               :options="options"/>
-
           </template>
           <template v-if="item.i === '1'">
             <d2-crud
-              :columns="columns"
-              :data="data"
+              :columns="columns_1"
+              :data="blockdata"
               :options="options"/>
-
           </template>
           <template v-if="item.i === '2'">
             <d2-crud
-              :columns="columns"
+              :columns="columns_1"
               :data="data"
               :options="options"/>
 
@@ -89,16 +87,27 @@ export default {
         margin: [10, 10],
         useCssTransforms: true
       },
+      columns_1: [
+          {
+            title: '品种',
+            key: 'code',
+            width: '120'
+          },
+          {
+            title: '涨跌幅',
+            key: 'change'
+          }
+        ],
       columns: [
           {
             title: '日期',
             key: 'date',
-            width: '180'
+            width: '120'
           },
           {
             title: '品种',
             key: 'code',
-            width: '180'
+            width: '120'
           },
           {
             title: '价格',
@@ -109,9 +118,24 @@ export default {
         {
           date: '2020-03-12',
           code: 'rb2005',
-          price: '3390'
+          price: '3390',
+          change: '0.2%',
+          change1min: '-0.3%'
         }],
-      
+      blockdata: [
+        {
+          date: '2020-03-12',
+          code: '黑色系',
+          change: '0.2%',
+          change1min: '-0.3%'
+        },
+        {
+          date: '2020-03-12',
+          code: '农产品',
+          change: '0.6%',
+          change1min: '-1.3%'
+        },
+      ]
     }
   },
   mounted () {
