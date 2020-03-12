@@ -16,7 +16,7 @@
         flex="dir:top main:justify cross:stretch box:justify">
         <div class="page-login--content-header">
           <p class="page-login--content-header-motto">
-            时间是一切财富中最宝贵的财富
+            量化交易管理面板
           </p>
         </div>
         <div
@@ -81,26 +81,21 @@
           </div>
         </div>
         <div class="page-login--content-footer">
-          <p class="page-login--content-footer-locales">
+          <!-- <p class="page-login--content-footer-locales">
             <a
               v-for="language in $languages"
               :key="language.value"
               @click="onChangeLocale(language.value)">
               {{ language.label }}
             </a>
-          </p>
+          </p> -->
           <p class="page-login--content-footer-copyright">
-            Copyright
-            <d2-icon name="copyright"/>
-            2018 D2 Projects 开源组织出品
-            <a href="https://github.com/FairyEver">
-              @FairyEver
-            </a>
+            QUANTAXIS Trade Admin
           </p>
           <p class="page-login--content-footer-options">
-            <a href="#">帮助</a>
+            <!-- <a href="#">帮助</a>
             <a href="#">隐私</a>
-            <a href="#">条款</a>
+            <a href="#">条款</a> -->
           </p>
         </div>
       </div>
