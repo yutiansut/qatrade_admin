@@ -54,9 +54,7 @@
 <script>
 import Vue from 'vue'
 import axios from 'axios'
-import HQChart from 'hqchart'
 import Kline from 'qatradechart'
-import $ from 'jquery'
 import { GridLayout, GridItem } from 'vue-grid-layout'
 import list from '@/views/demo/charts/list/_mixin/list.js'
 Vue.component('d2-grid-layout', GridLayout)
@@ -71,7 +69,7 @@ export default {
     }
     return {
       layout: {
-        layout:[
+        layout: [
           { 'code': 'rb2010', 'name': '行情报价', 'x': 0, 'y': 0, 'w': 4, 'h': 10, 'i': '0' },
           { 'code': 'j2010', 'name': '涨速榜', 'x': 4, 'y': 0, 'w': 2, 'h': 15, 'i': '1' },
           { 'code': 'jm2010', 'name': '板块涨跌幅', 'x': 0, 'y': 0, 'w': 4, 'h': 5, 'i': '2' },
@@ -88,32 +86,32 @@ export default {
         useCssTransforms: true
       },
       columns_1: [
-          {
-            title: '品种',
-            key: 'code',
-            width: '120'
-          },
-          {
-            title: '涨跌幅',
-            key: 'change'
-          }
-        ],
+        {
+          title: '品种',
+          key: 'code',
+          width: '120'
+        },
+        {
+          title: '涨跌幅',
+          key: 'change'
+        }
+      ],
       columns: [
-          {
-            title: '日期',
-            key: 'date',
-            width: '120'
-          },
-          {
-            title: '品种',
-            key: 'code',
-            width: '120'
-          },
-          {
-            title: '价格',
-            key: 'price'
-          }
-        ],
+        {
+          title: '日期',
+          key: 'date',
+          width: '120'
+        },
+        {
+          title: '品种',
+          key: 'code',
+          width: '120'
+        },
+        {
+          title: '价格',
+          key: 'price'
+        }
+      ],
       data: [
         {
           date: '2020-03-12',
@@ -134,7 +132,7 @@ export default {
           code: '农产品',
           change: '0.6%',
           change1min: '-1.3%'
-        },
+        }
       ]
     }
   },
@@ -194,7 +192,6 @@ export default {
       }
     },
     initcodes () {
-
       axios.get(this.url + '/codelist')
         .then(response => {
           let r = response.data['result']
@@ -204,16 +201,16 @@ export default {
     },
     initkline () {
       this.kline = new Kline({
-        element: "#kline_container",
+        element: '#kline_container',
         width: 400,
         height: 200,
         theme: 'light', // light/dark
         language: 'zh-cn', // zh-cn/en-us/zh-tw
-        ranges: ["1w", "1d", "1h", "30m", "15m", "5m", "1m", "line"],
+        ranges: ['1w', '1d', '1h', '30m', '15m', '5m', '1m', 'line'],
         symbol: 'RBL8',
         symbolName: '螺纹主连',
-        type: "poll", // poll/socket
-        url: this.url + "/realtime/future",
+        type: 'poll', // poll/socket
+        url: this.url + '/realtime/future',
         limit: 300,
         intervalTime: 1000,
         debug: false,
@@ -257,6 +254,4 @@ export default {
 
   }
 }
-
-
 </style>
