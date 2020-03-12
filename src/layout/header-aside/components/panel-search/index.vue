@@ -1,7 +1,7 @@
 <template>
   <div class="panel-search" flex="dir:top">
     <div class="panel-search__input-group" flex-box="0" flex="dir:top main:center cross:center" @click.self="handlePanelClick">
-      <d2-icon-svg class="panel-search__logo" name="d2-admin-text"/>
+      <d2-icon-svg class="panel-search__logo" name="qa_logo"/>
       <el-autocomplete
         class="panel-search__input"
         ref="input"
