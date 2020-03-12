@@ -15,7 +15,9 @@ import demoD2Crud from './modules/demo-d2-crud'
 // 第三方网页
 import demoFrame from './modules/demo-frame'
 
-import demoQA from './modules/demo-qa'
+import demotrade from './modules/demo-trade'
+
+import demobacktest  from './modules/demo-backtest'
 
 // 菜单 侧边栏
 export const menuAside = [
@@ -27,7 +29,8 @@ export const menuAside = [
   demoBusiness,
   demoD2Crud,
   demoFrame,
-  demoQA
+  demotrade,
+  demobacktest
 ]
 
 // 菜单 顶栏
@@ -63,5 +66,6 @@ export const menuHeader = [
   // },
   // demoPlayground,
   // demoBusiness,
-  demoQA
+  demotrade,
+  demobacktest
 ]

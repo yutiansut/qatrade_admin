@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import menu from '@/menu/modules/demo-qa'
+import menu from '@/menu/modules/demo-trade'
 export default {
   data () {
     return {
