@@ -6,7 +6,8 @@ import App from './App'
 import d2Admin from '@/plugin/d2admin'
 // store
 import store from '@/store/index'
-
+import $ from 'jquery'
+window.self.$ = $
 // 菜单和路由设置
 import router from './router'
 import { menuHeader, menuAside } from '@/menu'

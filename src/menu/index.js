@@ -17,9 +17,9 @@ import demoFrame from './modules/demo-frame'
 
 import demotrade from './modules/demo-trade'
 
-import demobacktest  from './modules/demo-backtest'
+import demobacktest from './modules/demo-backtest'
 
-import  demorealtime from './modules/demo-realtime'
+import demorealtime from './modules/demo-realtime'
 
 // 菜单 侧边栏
 export const menuAside = [
@@ -49,7 +49,7 @@ export const menuHeader = [
   demobacktest,
   demorealtime,
   demoPlayground,
-  //demoBusiness,
+  // demoBusiness,
   {
     title: '功能',
     icon: 'puzzle-piece',
@@ -73,5 +73,5 @@ export const menuHeader = [
         ]
       }
     ]
-  },
+  }
 ]

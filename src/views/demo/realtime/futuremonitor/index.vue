@@ -12,9 +12,40 @@
         @resized="resizedHandler"
         @moved="movedHandler">
         <el-card shadow="never" class="page_card">
-          <el-tag size="mini" type="info" slot="header">黑色系 {{item.i}}</el-tag>
+          <el-tag size="mini" type="info" slot="header">{{item.code}}</el-tag>
+          <el-tag size="mini" type="info" slot="header">{{item.name}}</el-tag>
           <template v-if="item.i === '0'">
-            <div class="d2-mb">期货品种监控</div>
+            <d2-crud
+              :columns="columns"
+              :data="data"
+              :options="options"/>
+
+          </template>
+          <template v-if="item.i === '1'">
+            <d2-crud
+              :columns="columns"
+              :data="data"
+              :options="options"/>
+
+          </template>
+          <template v-if="item.i === '2'">
+            <d2-crud
+              :columns="columns"
+              :data="data"
+              :options="options"/>
+
+          </template>
+          <template v-if="item.i === '3'">
+            <d2-crud
+              :columns="columns"
+              :data="data"
+              :options="options"/>
+
+          </template>
+          <template v-if="item.i === '4'">
+
+              <div id="kline_container"></div>
+
           </template>
         </el-card>
       </d2-grid-item>
@@ -24,22 +55,30 @@
 
 <script>
 import Vue from 'vue'
+import axios from 'axios'
+import HQChart from 'hqchart'
+import Kline from 'qatradechart'
+import $ from 'jquery'
 import { GridLayout, GridItem } from 'vue-grid-layout'
+import list from '@/views/demo/charts/list/_mixin/list.js'
 Vue.component('d2-grid-layout', GridLayout)
 Vue.component('d2-grid-item', GridItem)
 export default {
+  mixins: [
+    list
+  ],
   data () {
+    this.chartSettings = {
+      showLine: ['持仓量']
+    }
     return {
       layout: {
-        layout: [
-          { 'x': 0, 'y': 0, 'w': 4, 'h': 10, 'i': '0' },
-          { 'x': 4, 'y': 0, 'w': 2, 'h': 5, 'i': '1' },
-          { 'x': 6, 'y': 0, 'w': 4, 'h': 5, 'i': '2' },
-          { 'x': 10, 'y': 0, 'w': 2, 'h': 10, 'i': '3' },
-          { 'x': 4, 'y': 5, 'w': 4, 'h': 5, 'i': '4' },
-          { 'x': 8, 'y': 5, 'w': 2, 'h': 5, 'i': '5' },
-          { 'x': 0, 'y': 10, 'w': 8, 'h': 5, 'i': '6' },
-          { 'x': 8, 'y': 10, 'w': 4, 'h': 5, 'i': '7' }
+        layout:[
+          { 'code': 'rb2010', 'name': '行情报价', 'x': 0, 'y': 0, 'w': 4, 'h': 10, 'i': '0' },
+          { 'code': 'j2010', 'name': '涨速榜', 'x': 4, 'y': 0, 'w': 2, 'h': 15, 'i': '1' },
+          { 'code': 'jm2010', 'name': '板块涨跌幅', 'x': 0, 'y': 0, 'w': 4, 'h': 5, 'i': '2' },
+          { 'code': 'sc2010', 'name': '1分钟涨速榜', 'x': 10, 'y': 0, 'w': 2, 'h': 10, 'i': '3' },
+          { 'code': 'sc2010', 'name': '图表', 'x': 6, 'y': 0, 'w': 6, 'h': 12, 'i': '4' }
         ],
         colNum: 12,
         rowHeight: 30,
@@ -49,12 +88,38 @@ export default {
         verticalCompact: true,
         margin: [10, 10],
         useCssTransforms: true
-      }
+      },
+      columns: [
+          {
+            title: '日期',
+            key: 'date',
+            width: '180'
+          },
+          {
+            title: '品种',
+            key: 'code',
+            width: '180'
+          },
+          {
+            title: '价格',
+            key: 'price'
+          }
+        ],
+      data: [
+        {
+          date: '2020-03-12',
+          code: 'rb2005',
+          price: '3390'
+        }],
+      
     }
   },
   mounted () {
     // 加载完成后显示提示
     this.showInfo()
+    this.init_url()
+    this.initcodes()
+    this.initkline()
   },
   methods: {
     log (arg1 = 'log', ...logs) {
@@ -94,6 +159,49 @@ export default {
     },
     movedHandler (i, newX, newY) {
       this.log('movedHandler', `i: ${i}, newX: ${newX}, newY: ${newY}`)
+    },
+    init_url () {
+      // marketuri
+      let uri = localStorage.getItem('userUrl')
+      if (uri == null) {
+        this.url = 'http://127.0.0.1:8010'
+      } else {
+        this.url = JSON.parse(uri)['marketuri']
+      }
+    },
+    initcodes () {
+      //http://www.yutiansut.com:8010/codelist
+      axios.get(this.url + '/codelist')
+        .then(response => {
+          let r = response.data['result']
+          console.log(r)
+          this.codes = r
+        })
+    },
+    initkline () {
+      this.kline = new Kline({
+        element: "#kline_container",
+        width: 400,
+        height: 200,
+        theme: 'light', // light/dark
+        language: 'zh-cn', // zh-cn/en-us/zh-tw
+        ranges: ["1w", "1d", "1h", "30m", "15m", "5m", "1m", "line"],
+        symbol: 'RBL8',
+        symbolName: '螺纹主连',
+        type: "poll", // poll/socket
+        url: this.url + "/realtime/future",
+        limit: 300,
+        intervalTime: 1000,
+        debug: false,
+        showTrade: false,
+        reverseColor: true
+      })
+      this.kline.draw()
+      this.handleResize()
+    },
+    handleResize () {
+      console.log('window.innerWidth created', window.innerWidth)
+      this.kline.resize(700, 380)
     }
   }
 }
@@ -115,6 +223,16 @@ export default {
         opacity: 1;
       }
     }
+    .kline_container {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 262px;
+        position: relative;
+    }
+
   }
 }
+
+
 </style>
