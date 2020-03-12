@@ -7,6 +7,7 @@
 
 <script>
 import menu from '@/menu/modules/demo-trade'
+import { mapState, mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -16,6 +17,16 @@ export default {
         subTitle: '提供借鉴和参考的页面'
       }
     }
-  }
+  },
+  mounted () {
+    console.log(this.aside)
+    console.log(this.header)
+  },
+  computed: {
+    ...mapState('d2admin/menu', [
+      'header',
+      'aside'
+    ])
+  },
 }
 </script>

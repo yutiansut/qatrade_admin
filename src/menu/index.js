@@ -67,7 +67,7 @@ export const menuHeader = [
   //     }
   //   ]
   // },
-  // demoPlayground,
+  demoPlayground,
   // demoBusiness,
   demotrade,
   demobacktest,

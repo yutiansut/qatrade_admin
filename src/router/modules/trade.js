@@ -20,6 +20,15 @@ export default {
         ...meta,
         title: '示例首页'
       }
-    }
+    },
+    {
+      path: 'table/1',
+      name: `${pre}table-1`,
+      component: _import('demo/business/table/1'),
+      meta: {
+        ...meta,
+        title: '表格 1'
+      }
+    },
   ])('demo-trade-')
 }

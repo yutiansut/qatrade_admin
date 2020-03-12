@@ -1,5 +1,5 @@
 {
-  "name": "d2-admin",
+  "name": "qatrade-admin",
   "version": "1.8.0",
   "scripts": {
     "serve": "vue-cli-service serve --open",
