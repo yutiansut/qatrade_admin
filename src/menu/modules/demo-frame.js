@@ -1,10 +1,10 @@
 export default {
   path: '/demo/frame',
-  title: '内嵌网页',
+  title: 'QACommunity',
   icon: 'globe',
   children: (pre => [
-    { path: `${pre}index`, title: 'Frame ', icon: 'home' },
-    { path: `${pre}d2-doc`, title: 'D2Admin 中文文档', iconSvg: 'd2-admin' },
-    { path: `${pre}html`, title: '静态 HTML', icon: 'code' }
+    { path: `${pre}qadeskpro`, title: 'qadeskpro', iconSvg: 'd2-admin' },
+    { path: `${pre}html`, title: '研究Lab', icon: 'code' },
+    { path: `${pre}index`, title: 'airflow管理 ', icon: 'home' }
   ])('/demo/frame/')
 }

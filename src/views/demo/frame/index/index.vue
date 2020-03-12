@@ -1,20 +1,12 @@
 <template>
-  <d2-container type="ghost">
-    <d2-module-index-banner slot="header" v-bind="banner"/>
-    <d2-module-index-menu :menu="menu"/>
-  </d2-container>
+  <d2-container-frame src="http://127.0.0.1:8080"/>
 </template>
 
 <script>
-import menu from '@/menu/modules/demo-frame'
 export default {
   data () {
     return {
-      menu,
-      banner: {
-        title: 'FRAME',
-        subTitle: '在 D2Admin 中嵌入其它页面'
-      }
+      filename: __filename
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <d2-container-frame :src="`${$baseUrl}html/demo.html`"/>
+  <d2-container-frame src="http://127.0.0.1:8888"/>
 </template>
 
 <script>

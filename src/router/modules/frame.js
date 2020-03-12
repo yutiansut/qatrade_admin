@@ -12,8 +12,8 @@ export default {
   redirect: { name: 'demo-frame-index' },
   component: layoutHeaderAside,
   children: (pre => [
-    { path: 'index', name: `${pre}index`, component: _import('demo/frame/index'), meta: { ...meta, title: 'Frame 首页' } },
-    { path: 'html', name: `${pre}html`, component: _import('demo/frame/html'), meta: { ...meta, title: '静态 HTML' } },
-    { path: 'd2-doc', name: `${pre}d2-doc`, component: _import('demo/frame/d2-doc'), meta: { ...meta, title: 'D2Admin 中文文档' } }
+    { path: 'html', name: `${pre}html`, component: _import('demo/frame/html'), meta: { ...meta, title: '研究Lab' } },
+    { path: 'qadeskpro', name: `${pre}qadeskpro`, component: _import('demo/frame/qadeskpro'), meta: { ...meta, title: 'qadeskpro' } },
+    { path: 'index', name: `${pre}index`, component: _import('demo/frame/index'), meta: { ...meta, title: 'airflow计划任务' } }
   ])('demo-frame-')
 }
