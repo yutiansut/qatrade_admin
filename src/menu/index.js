@@ -20,6 +20,7 @@ import demotrade from './modules/demo-trade'
 import demobacktest from './modules/demo-backtest'
 
 import demorealtime from './modules/demo-realtime'
+import demoCommunity from './modules/demo-community'
 
 // 菜单 侧边栏
 export const menuAside = [
@@ -33,7 +34,8 @@ export const menuAside = [
   demoFrame,
   demotrade,
   demobacktest,
-  demorealtime
+  demorealtime,
+  demoCommunity
 ]
 
 // 菜单 顶栏
@@ -43,12 +45,13 @@ export const menuHeader = [
     title: '首页',
     icon: 'home'
   },
-
+  demoFrame,
   // demoBusiness,
   demotrade,
   demobacktest,
   demorealtime,
   demoPlayground,
+
   // demoBusiness,
   {
     title: '功能',
@@ -59,7 +62,6 @@ export const menuHeader = [
       demoElement,
       demoCharts,
       demoPlugins,
-      demoFrame,
       {
         title: '新窗口打开链接',
         icon: 'link',
@@ -73,5 +75,6 @@ export const menuHeader = [
         ]
       }
     ]
-  }
+  },
+  demoCommunity
 ]

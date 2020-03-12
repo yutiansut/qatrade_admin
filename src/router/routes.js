@@ -1,5 +1,6 @@
 import playground from './modules/playground'
 import frame from './modules/frame'
+import community from './modules/community'
 import d2Crud from './modules/d2-crud'
 import plugins from './modules/plugins'
 import charts from './modules/charts'
@@ -67,7 +68,8 @@ const frameIn = [
   element,
   business,
   trade,
-  realtime
+  realtime,
+  community
 ]
 
 /**
