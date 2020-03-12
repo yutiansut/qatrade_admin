@@ -13,8 +13,8 @@ export default {
     return {
       menu,
       banner: {
-        title: 'DEMOS',
-        subTitle: '提供借鉴和参考的页面'
+        title: 'TradeAccounts',
+        subTitle: 'Account'
       }
     }
   },

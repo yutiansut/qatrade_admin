@@ -18,7 +18,7 @@ export default {
       component: _import('demo/trade/tradeacc'),
       meta: {
         ...meta,
-        title: '示例首页'
+        title: '交易账户'
       }
     },
     {

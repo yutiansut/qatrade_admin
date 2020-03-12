@@ -42,8 +42,10 @@ new Vue({
     // 检测路由变化切换侧边栏内容
     '$route.matched': {
       handler (matched) {
+        console.log(matched);
         if (matched.length > 0) {
           const _side = menuAside.filter(menu => menu.path === matched[0].path)
+          console.log(_side);
           this.$store.commit('d2admin/menu/asideSet', _side.length > 0 ? _side[0].children : [])
         }
       },
