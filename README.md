@@ -1,5 +1,8 @@
 QATrade Admin
 
+![Deploy Github](https://github.com/yutiansut/qatrade_admin/workflows/Deploy%20Github/badge.svg)
+
+
 交易管理终端
 
 多账户管理
