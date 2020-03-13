@@ -1,0 +1,8 @@
+.theme-dark .d2-layout-header-aside-group{background-color:#202020}
+.theme-dark .d2-layout-header-aside-group .d2-layout-header-aside-mask{background:#202020}
+.chart_container.light .chart_dropdown_data a:hover{ background-color: #f4f4f4}
+.chart_container.light .chart_toolbar_button:hover{ background-color: #f4f4f4}
+.chart_container.light .chart_toolbar_button.selected{ background-color: #f4f4f4}
+.chart_container.light .chart_toolbar_tabgroup li a:hover{ background-color: #f4f4f4}
+.chart_container.light .chart_toolpanel_button.selected .chart_toolpanel_icon{ background-color: #f4f4f4}
+.chart_container.light #chart_tabbar a:hover{ background-color: #f4f4f4}
